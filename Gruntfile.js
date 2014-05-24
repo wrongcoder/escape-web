@@ -2,12 +2,14 @@ module.exports = function (grunt) {
 	"use strict";
 
 	grunt.loadNpmTasks("grunt-contrib-clean");
+	grunt.loadNpmTasks("grunt-contrib-connect");
 	grunt.loadNpmTasks("grunt-contrib-copy");
 	grunt.loadNpmTasks("grunt-contrib-uglify");
 	grunt.loadNpmTasks("grunt-ts");
 
-	grunt.registerTask("dev", [ "ts:dev" ]);
+	grunt.registerTask("dev", [ "connect:dev", "ts:dev" ]);
 	grunt.registerTask("dist", [ "clean", "ts:prod", "uglify:prod", "copy:dist" ]);
+	grunt.registerTask("test", [ "dist", "connect:dist:keepalive" ]);
 	grunt.registerTask("default", [ "dev" ]);
 
 	grunt.initConfig({
@@ -20,6 +22,7 @@ module.exports = function (grunt) {
 				src: [ "app/src/**/*.ts" ],
 				reference: "app/reference.ts",
 				out: "target/application.js",
+				watch: "app/src",
 			},
 			prod: {
 				baseDir: "app/src",
@@ -40,6 +43,22 @@ module.exports = function (grunt) {
 					{ expand: true, dest: "target/dist/", cwd: "target", src: [ "application.js" ] },
 					{ expand: true, dest: "target/dist/", cwd: "app", src: [ "index.html", "static/**" ] },
 				],
+			},
+		},
+		connect: {
+			options: {
+				port: 8080,
+				hostname: "*",
+			},
+			dev: {
+				options: {
+					base: [ "app", "target" ],
+				},
+			},
+			dist: {
+				options: {
+					base: [ "target/dist" ],
+				}
 			},
 		},
 		clean: {
