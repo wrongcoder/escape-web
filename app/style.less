@@ -1,2 +1,43 @@
-html {
+@background-default: #333;
+@background-high-contrast: #000;
+@foreground-default: #eee;
+@foreground-high-contrast: #fff;
+
+html, body {
+	background-color: #000;
+	margin: 0;
+	padding: 0;
+}
+
+#rootControllerContainer {
+	margin: 0 auto;
+	padding: 0;
+	width: 800px;
+	height: 600px;
+
+	color: @foreground-default;
+	background-color: @background-default;
+
+	cursor: crosshair;
+
+	html.dev & {
+		border: 1px solid #666;
+	}
+}
+
+.container {
+	background-color: red;
+
+	img.background {
+		float: left;
+	}
+
+	.caption {
+		float: left;
+		position: relative;
+		background-color: @background-high-contrast;
+		color: @foreground-high-contrast;
+		border: 1px solid @foreground-default;
+		padding: 0.2em 3em;
+	}
 }

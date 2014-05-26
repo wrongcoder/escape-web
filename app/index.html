@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html data-ng-app="Application">
+<!-- build:[class] ETR -->
+<html data-ng-app="ETR" class="ETR dev">
+<!-- /build -->
 <head>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
 	<!--suppress HtmlUnknownTarget -->
@@ -10,10 +12,11 @@
 	<link rel="stylesheet/less" href="style.less" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.0/less.min.js"></script>
 	<!-- /build -->
+	<title>Escape the Room</title>
 </head>
 <body>
-	<div data-ng-controller="HelloWorldController">
-		<p>The number is {{number}}.</p>
+	<div id="rootControllerContainer" class="container" data-ng-controller="RootContainerController">
+		<div id="rootViewContainer" class="container" data-ng-include="'view/' + g.rootView + '.html'"></div>
 	</div>
 </body>
 </html>

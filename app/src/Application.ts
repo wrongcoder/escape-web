@@ -1,6 +1,9 @@
 /// <reference path="../reference.ts" />
 
-module Application {
-	var Application = angular.module("Application", []);
-	Application.controller("HelloWorldController", HelloWorldController);
+module ETR {
+	var Application = angular.module("ETR", []);
+	Application.service("g", GameState);
+	Application.controller("RootContainerController", RootContainerController);
+	Application.controller("SplashScreenController", SplashScreenController);
+	Application.controller("HallwayRoomController", HallwayRoomController);
 }
