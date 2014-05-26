@@ -4,3 +4,4 @@
 /npm-debug.log
 /target
 /.tscache
+/tscommand-*.tmp.txt
