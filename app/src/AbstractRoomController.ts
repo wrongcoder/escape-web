@@ -2,10 +2,7 @@
 
 module ETR {
 	export class AbstractRoomController {
-		private g: GameState;
-
-		//noinspection JSUnusedGlobalSymbols
-		static $inject = [ "$scope", "g" ];
+		g: GameState;
 
 		constructor($scope, g: GameState) {
 			this.g = g;

@@ -17,12 +17,15 @@ module ETR {
 			$scope.g = g;
 		}
 
-		reload(): void {
+		reloadView(): void {
 			var rootView = this.g.rootView;
 			this.$timeout(() => { this.g.rootView = rootView }, 0);
 			this.$templateCache.removeAll();
 			this.g.rootView = '';
 		}
 
+		toggleBorders(): void {
+			this.g.displayContainerBorders = !this.g.displayContainerBorders;
+		}
 	}
 }

@@ -20,10 +20,16 @@
 </head>
 <body>
 	<div id="rootControllerContainer" class="container" data-ng-controller="RootContainerController">
-		<div id="rootViewContainer" class="container" data-ng-include="'view/' + g.rootView + '.html'"></div>
+		<div id="rootViewContainer" class="container" data-ng-include="'view/' + g.rootView + '.html'" data-ng-class="{borders: g.displayContainerBorders}"></div>
 	</div>
 	<div id="debugControllerContainer" class="container" data-ng-controller="DebugController">
-		<button data-ng-click="c.reload()">Reload View</button>
+		<div>
+			<button data-ng-click="c.reloadView()">Reload View</button>
+			<button data-ng-click="c.toggleBorders()">Borders: {{g.displayContainerBorders}}</button>
+		</div>
+		<div>
+			<label for="debugRootView">View:</label> <input id="debugRootView" type="text" data-ng-model="g.rootView" />
+		</div>
 	</div>
 </body>
 </html>

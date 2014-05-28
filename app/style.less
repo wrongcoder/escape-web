@@ -4,9 +4,11 @@
 @foreground-high-contrast: #fff;
 
 html, body {
+	color: #fff;
 	background-color: #000;
 	margin: 0;
 	padding: 0;
+	font-size: 14px;
 }
 
 #rootControllerContainer {
@@ -21,17 +23,27 @@ html, body {
 	width: 800px;
 	height: 600px;
 
-	margin: 0 auto;
+	// All contained elements are absolute-positioned relative to this element
+	top: 0;
+	left: 0;
+	position: relative;
+
+	margin: 2em auto 0;
 
 	color: @foreground-default;
 	background-color: @background-default;
+	font-family: Verdana, sans-serif;
 
-	cursor: crosshair;
+	cursor: default;
 }
 
 #debugControllerContainer {
 	margin: 2em 0;
 	text-align: center;
+
+	div {
+		margin: 0.3em;
+	}
 
 	display: none;
 	html.dev & {
@@ -40,16 +52,28 @@ html, body {
 }
 
 .container {
-	img.background {
-		float: left;
+	.background {
+		top: 0;
+		left: 0;
+		position: absolute;
+	}
+
+	.object {
+		position: absolute;
+		cursor: pointer;
+
+		html.dev .borders & {
+			outline: 3px ridge #00f;
+		}
 	}
 
 	.caption {
-		float: left;
-		position: relative;
+		position: absolute;
+		max-width: 20em;
 		background-color: @background-high-contrast;
 		color: @foreground-high-contrast;
 		border: 1px solid @foreground-default;
-		padding: 0.2em 3em;
+		padding: 0.5em 1.5em;
+		z-index: 10000;
 	}
 }
