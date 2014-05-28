@@ -9,8 +9,8 @@ module ETR {
 
 		constructor($scope, g: GameState) {
 			this.g = g;
+			$scope.c = this;
 			$scope.g = g;
-			$scope.click = this.click;
 		}
 
 		click(): void {
