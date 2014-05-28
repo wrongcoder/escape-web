@@ -22,5 +22,8 @@
 	<div id="rootControllerContainer" class="container" data-ng-controller="RootContainerController">
 		<div id="rootViewContainer" class="container" data-ng-include="'view/' + g.rootView + '.html'"></div>
 	</div>
+	<div id="debugControllerContainer" class="container" data-ng-controller="DebugController">
+		<button data-ng-click="c.reload()">Reload View</button>
+	</div>
 </body>
 </html>

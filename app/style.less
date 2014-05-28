@@ -10,24 +10,36 @@ html, body {
 }
 
 #rootControllerContainer {
-	margin: 0 auto;
-	padding: 0;
+	&:after {
+		content: "";
+		clear: both;
+		display: block;
+	}
+}
+
+#rootViewContainer {
 	width: 800px;
 	height: 600px;
+
+	margin: 0 auto;
 
 	color: @foreground-default;
 	background-color: @background-default;
 
 	cursor: crosshair;
+}
 
+#debugControllerContainer {
+	margin: 2em 0;
+	text-align: center;
+
+	display: none;
 	html.dev & {
-		border: 1px solid #666;
+		display: block;
 	}
 }
 
 .container {
-	background-color: red;
-
 	img.background {
 		float: left;
 	}
