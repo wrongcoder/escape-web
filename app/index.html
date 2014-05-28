@@ -14,7 +14,9 @@
 </head>
 <body>
 	<div data-ng-controller="HelloWorldController">
-		<p>The number is {{number}}.</p>
+		<p>The number is {{c.number}}.</p>
+		<button data-ng-click="c.decrement()">-</button>
+		<button data-ng-click="c.increment()">+</button>
 	</div>
 </body>
 </html>

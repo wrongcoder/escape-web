@@ -3,14 +3,26 @@
 module Application {
 
 	export interface HelloWorldControllerScope {
-		number: number;
+		c: HelloWorldController;
 	}
 
 	export class HelloWorldController {
+		private number: number;
+
 		//noinspection JSUnusedGlobalSymbols
 		static $inject = [ "$scope" ];
+
 		constructor($scope: HelloWorldControllerScope) {
-			$scope.number = 3;
+			this.number = 3;
+			$scope.c = this;
+		}
+
+		increment() {
+			this.number += 1;
+		}
+
+		decrement() {
+			this.number -= 1;
 		}
 	}
 
