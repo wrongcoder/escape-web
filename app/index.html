@@ -4,12 +4,13 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
 	<!--suppress HtmlUnknownTarget -->
 	<script src="application.js"></script>
-	<!--suppress HtmlUnknownTarget -->
-	<link rel="stylesheet" href="style.css" />
-	<!-- build:remove:prod -->
+	<!--(if target dev)><!-->
 	<link rel="stylesheet/less" href="style.less" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.0/less.min.js"></script>
-	<!-- /build -->
+	<!--<!(endif)-->
+	<!--(if target prod)>
+	<link rel="stylesheet" href="style.css" />
+	<!--<!(endif)-->
 </head>
 <body>
 	<div data-ng-controller="HelloWorldController">

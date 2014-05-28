@@ -6,11 +6,11 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks("grunt-contrib-copy");
 	grunt.loadNpmTasks("grunt-contrib-less");
 	grunt.loadNpmTasks("grunt-contrib-uglify");
-	grunt.loadNpmTasks("grunt-processhtml");
+	grunt.loadNpmTasks("grunt-targethtml");
 	grunt.loadNpmTasks("grunt-ts");
 
 	grunt.registerTask("dev", [ "connect:dev", "ts:dev" ]);
-	grunt.registerTask("dist", [ "clean", "ts:prod", "uglify:prod", "less:prod", "processhtml:prod", "copy:dist" ]);
+	grunt.registerTask("dist", [ "clean", "ts:prod", "uglify:prod", "less:prod", "targethtml:prod", "copy:dist" ]);
 	grunt.registerTask("test", [ "dist", "connect:dist:keepalive" ]);
 	grunt.registerTask("default", [ "dev" ]);
 
@@ -51,7 +51,7 @@ module.exports = function (grunt) {
 				},
 			},
 		},
-		processhtml: {
+		targethtml: {
 			prod: {
 				files: {
 					"target/index.html": "app/index.html",
