@@ -51,6 +51,58 @@ html, body {
 	}
 }
 
+#buttonControllerContainer {
+	width: 800px;
+	height: 68px;
+
+	top: 0;
+	left: 0;
+	position: absolute;
+
+	background-color: #fff;
+
+	.inventory {
+		@border-color: #000;
+
+		top: 8px;
+		left: 8px;
+		position: absolute;
+
+		width: 50px * 8;
+		height: 50px;
+		border: 1px solid @border-color;
+
+		// Remove gap between icons
+		font-size: 0;
+
+		background-color: @border-color;
+
+		.item {
+			width: 50px;
+			height: 50px;
+
+			top: 0;
+			left: 0;
+			position: relative;
+			display: inline-block;
+
+			img, span {
+				background-color: #fff;
+				width: 48px;
+				height: 48px;
+				left: 1px;
+				top: 1px;
+				position: absolute;
+			}
+
+			&.selected {
+				outline: 4px solid #f00;
+				z-index: 1;
+			}
+		}
+	}
+}
+
 .container {
 	.background {
 		top: 0;
