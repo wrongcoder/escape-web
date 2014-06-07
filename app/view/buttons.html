@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <div class="container buttons" data-ng-controller="ButtonController" data-ng-click="c.click($event)">
 	<div class="container inventory">
-		<div class="item"><img src="static/icon/vase.png" /></div>
-		<div class="item"><img src="static/icon/vase.png" /></div>
-		<div class="item"><img src="static/icon/vase.png" /></div>
-		<div class="item selected"><img src="static/icon/vase.png" /></div>
-		<div class="item"><img src="static/icon/vase.png" /></div>
-		<div class="item"><img src="static/icon/vase.png" /></div>
-		<div class="item"><span></span></div>
-		<div class="item"><span></span></div>
+		<div data-ng-repeat="index in c.inventoryIndexes(0, 8)" data-ng-class="{selected: g.inventory[index] === g.inventorySelected}" class="item">
+			<span data-ng-if="typeof g.inventory[index] === 'undefined'"></span>
+			<img data-ng-if="typeof g.inventory[index] === 'object'" data-ng-src="static/icon/{{item.icon}}" src=""/>
+			ding
+		</div>
 	</div>
 </div>
