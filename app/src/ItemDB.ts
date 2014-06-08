@@ -2,7 +2,7 @@
 
 module ETR {
 
-	var ItemDB: { [key: string]: Item } = {};
+	export var ItemDB: { [key: string]: Item } = {};
 
 	export class Item {
 		id: string;

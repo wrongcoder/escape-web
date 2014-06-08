@@ -17,7 +17,16 @@ module ETR {
 			this.caption = clicked;
 
 			if (clicked === "vase") {
+				this.g.addInventory(ItemDB['vase']);
 				this.showVase = false;
+			}
+
+			if (clicked === "table" && this.showVase === false) {
+				if (this.g.getSelectedItem() === ItemDB['vase']) {
+					this.g.removeSelectedItem();
+					this.showVase = true;
+					this.caption = "put-back";
+				}
 			}
 		}
 	}

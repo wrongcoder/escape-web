@@ -20,6 +20,11 @@ module ETR {
 			}
 			return indexes;
 		}
+
+		click($event: Event, ix: number): void {
+			$event.stopPropagation();
+			this.g.inventorySelected = ix;
+		}
 	}
 
 }
