@@ -13,9 +13,9 @@ module ETR {
 			$scope.g = g;
 		}
 
-		inventoryIndexes(start: number, length: number) {
+		inventoryIndexes(start: number, length: number): number[] {
 			var indexes: number[] = new Array(length);
-			for (var i = start; i <= length; i++) {
+			for (var i = 0; i < length; i++) {
 				indexes[i] = start + i;
 			}
 			return indexes;
