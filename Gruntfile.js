@@ -20,10 +20,10 @@ module.exports = function (grunt) {
 				removeComments: false,
 			},
 			dev: {
-				baseDir: "app/src",
+				baseDir: "app",
 				src: [ "app/src/**/*.ts" ],
 				reference: "app/reference.ts",
-				out: "target/application.js",
+				outDir: "target",
 				watch: "app/src",
 			},
 			prod: {
