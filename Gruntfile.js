@@ -31,6 +31,9 @@ module.exports = function (grunt) {
 				src: [ "app/src/**/*.ts" ],
 				reference: "app/reference.ts",
 				out: "target/code.js",
+				options: {
+					fast: "never",
+				},
 			},
 		},
 		uglify: {
