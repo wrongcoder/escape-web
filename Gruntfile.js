@@ -20,10 +20,10 @@ module.exports = function (grunt) {
 				removeComments: false,
 			},
 			dev: {
-				baseDir: "app/src",
+				baseDir: "app",
 				src: [ "app/src/**/*.ts" ],
 				reference: "app/reference.ts",
-				out: "target/application.js",
+				outDir: "target",
 				watch: "app/src",
 			},
 			prod: {
@@ -31,6 +31,9 @@ module.exports = function (grunt) {
 				src: [ "app/src/**/*.ts" ],
 				reference: "app/reference.ts",
 				out: "target/code.js",
+				options: {
+					fast: "never",
+				},
 			},
 		},
 		uglify: {
@@ -73,7 +76,7 @@ module.exports = function (grunt) {
 			},
 			dev: {
 				options: {
-					base: [ "app", "target" ],
+					base: [ "app", "target", "" ],
 				},
 			},
 			dist: {

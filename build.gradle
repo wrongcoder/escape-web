@@ -1,0 +1,12 @@
+apply plugin: 'idea'
+
+idea {
+	module {
+		sourceDirs = [file('app'), file('target')];
+		testSourceDirs = [];
+		excludeDirs = [file('.gradle'), file('target/build')];
+		outputDir = file('target/build');
+		testOutputDir = file('target/build');
+		inheritOutputDirs = false;
+	}
+}
