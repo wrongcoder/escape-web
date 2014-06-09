@@ -28,20 +28,20 @@
 	<title>Escape the Room</title>
 </head>
 <body>
-	<div id="rootControllerContainer" class="container" data-ng-controller="RootContainerController">
-		<div id="rootViewContainer" class="container" data-ng-include="'view/' + g.rootView + '.html'" data-ng-class="{borders: g.displayContainerBorders}"></div>
+	<div id="rootControllerContainer" class="container" data-ng-controller="RootContainerController as c">
+		<div id="rootViewContainer" class="container" data-ng-include="'view/' + c.g.rootView + '.html'" data-ng-class="{borders: c.g.displayContainerBorders}"></div>
 	</div>
-	<div id="debugControllerContainer" class="container" data-ng-controller="DebugController">
+	<div id="debugControllerContainer" class="container" data-ng-controller="DebugController as c">
 		<div>
 			<button data-ng-click="c.reloadView()">Reload View</button>
-			<button data-ng-click="c.toggleBorders()">Borders: {{g.displayContainerBorders}}</button>
+			<button data-ng-click="c.toggleBorders()">Borders: {{c.g.displayContainerBorders}}</button>
 		</div>
 		<div>
-			<label>View: <input type="text" data-ng-model="g.rootView" /></label>
+			<label>View: <input type="text" data-ng-model="c.g.rootView" /></label>
 		</div>
 		<div>
 			<table>
-				<tr data-ng-repeat="(flagName, flagValue) in g.flag">
+				<tr data-ng-repeat="(flagName, flagValue) in c.g.flag">
 					<th>{{flagName}}</th>
 					<td>{{flagValue}}</td>
 				</tr>

@@ -5,12 +5,10 @@ module ETR {
 		private g: GameState;
 
 		//noinspection JSUnusedGlobalSymbols
-		static $inject = [ "$scope", "g" ];
+		static $inject = [ "g" ];
 
-		constructor($scope, g: GameState) {
+		constructor(g: GameState) {
 			this.g = g;
-			$scope.c = this;
-			$scope.g = g;
 		}
 
 		inventoryIndexes(start: number, length: number): number[] {

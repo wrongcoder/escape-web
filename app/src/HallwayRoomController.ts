@@ -5,10 +5,10 @@ module ETR {
 		private caption: string = undefined;
 
 		//noinspection JSUnusedGlobalSymbols
-		static $inject = [ "$scope", "g" ];
+		static $inject = [ "g" ];
 
-		constructor($scope, g: GameState) {
-			super($scope, g);
+		constructor(g: GameState) {
+			super(g);
 		}
 
 		click($event: MouseEvent, clicked: string) {

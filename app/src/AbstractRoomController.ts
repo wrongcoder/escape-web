@@ -4,10 +4,8 @@ module ETR {
 	export class AbstractRoomController {
 		g: GameState;
 
-		constructor($scope, g: GameState) {
+		constructor(g: GameState) {
 			this.g = g;
-			$scope.c = this;
-			$scope.g = g;
 		}
 	}
 }

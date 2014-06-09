@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<div class="container buttons" data-ng-controller="ButtonController" data-ng-click="c.click($event)">
+<div class="container buttons" data-ng-controller="ButtonController as c" data-ng-click="c.click($event)">
 	<div class="container inventory">
-		<div data-ng-repeat="index in c.inventoryIndexes(0, 8)" data-ng-class="{selected: index === g.inventory.index}" class="item">
-			<span data-ng-if="!g.inventory[index]"></span>
-			<img data-ng-if="g.inventory[index]" data-ng-click="c.click($event, index)" data-ng-src="static/icon/{{g.inventory[index].icon}}" src="#"/>
+		<div data-ng-repeat="index in c.inventoryIndexes(0, 8)" data-ng-class="{selected: index === c.g.inventory.index}" class="item">
+			<span data-ng-if="!c.g.inventory[index]"></span>
+			<img data-ng-if="c.g.inventory[index]" data-ng-click="c.click($event, index)" data-ng-src="static/icon/{{c.g.inventory[index].icon}}" src="#"/>
 		</div>
 	</div>
 </div>

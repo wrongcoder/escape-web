@@ -7,14 +7,12 @@ module ETR {
 		private $timeout: ng.ITimeoutService;
 
 		//noinspection JSUnusedGlobalSymbols
-		static $inject = [ "$scope", "g", "$templateCache", "$timeout" ];
+		static $inject = [ "g", "$templateCache", "$timeout" ];
 
-		constructor($scope, g: GameState, $templateCache: ng.ITemplateCacheService, $timeout: ng.ITimeoutService) {
+		constructor(g: GameState, $templateCache: ng.ITemplateCacheService, $timeout: ng.ITimeoutService) {
 			this.g = g;
 			this.$templateCache = $templateCache;
 			this.$timeout = $timeout;
-			$scope.c = this;
-			$scope.g = g;
 		}
 
 		reloadView(): void {
