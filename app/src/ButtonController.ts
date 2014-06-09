@@ -23,7 +23,7 @@ module ETR {
 
 		click($event: Event, ix: number): void {
 			$event.stopPropagation();
-			this.g.inventorySelected = ix;
+			this.g.inventory.index = ix;
 		}
 	}
 
