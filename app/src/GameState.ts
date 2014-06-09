@@ -5,10 +5,10 @@ module ETR {
 		/** Name of the view displayed by the root controller */
 		rootView = "splash";
 
-		/** Current inventory and selected item */
-		inventory: Inventory = makeInventory([]);
-
 		/** Whether to display debug borders on .container divs */
 		displayContainerBorders = false;
+
+		/** Current inventory and selected item */
+		inventory: Inventory = makeInventory([]);
 	}
 }
