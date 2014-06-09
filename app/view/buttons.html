@@ -3,7 +3,7 @@
 	<div class="container inventory">
 		<div data-ng-repeat="index in c.inventoryIndexes(0, 8)" data-ng-class="{selected: index === g.inventory.index}" class="item">
 			<span data-ng-if="!g.inventory[index]"></span>
-			<img data-ng-if="g.inventory[index]" data-ng-click="c.click($event, index)" data-ng-src="static/icon/{{g.inventory[index].icon}}" src=""/>
+			<img data-ng-if="g.inventory[index]" data-ng-click="c.click($event, index)" data-ng-src="static/icon/{{g.inventory[index].icon}}" src="#"/>
 		</div>
 	</div>
 </div>
