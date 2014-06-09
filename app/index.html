@@ -39,6 +39,14 @@
 		<div>
 			<label>View: <input type="text" data-ng-model="g.rootView" /></label>
 		</div>
+		<div>
+			<table>
+				<tr data-ng-repeat="(flagName, flagValue) in g.flag">
+					<th>{{flagName}}</th>
+					<td>{{flagValue}}</td>
+				</tr>
+			</table>
+		</div>
 	</div>
 </body>
 </html>

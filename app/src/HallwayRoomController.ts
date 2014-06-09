@@ -3,7 +3,6 @@
 module ETR {
 	export class HallwayRoomController extends AbstractRoomController {
 		private caption: string = undefined;
-		private showVase: boolean = true; // FIXME This is not the right plce to put this
 
 		//noinspection JSUnusedGlobalSymbols
 		static $inject = [ "$scope", "g" ];
@@ -18,16 +17,20 @@ module ETR {
 
 			if (clicked === "vase") {
 				this.g.inventory.add(ItemDB['vase']);
-				this.showVase = false;
+				this.g.flag.vasePickedUp = true;
 			}
 
-			if (clicked === "table" && this.showVase === false) {
+			if (clicked === "table" && this.g.flag.vasePickedUp === true) {
 				if (this.g.inventory.isSelected(ItemDB['vase'])) {
 					this.g.inventory.remove();
-					this.showVase = true;
+					this.g.flag.vasePickedUp = false;
 					this.caption = "put-back";
 				}
 			}
+		}
+
+		showVase(): boolean {
+			return !this.g.flag.vasePickedUp;
 		}
 	}
 }

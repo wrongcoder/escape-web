@@ -10,5 +10,10 @@ module ETR {
 
 		/** Current inventory and selected item */
 		inventory: Inventory = makeInventory([]);
+
+		/** Game flags */
+		flag = {
+			vasePickedUp: false,
+		};
 	}
 }
