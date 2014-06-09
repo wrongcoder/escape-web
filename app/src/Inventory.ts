@@ -62,6 +62,7 @@ module ETR {
 				removeIx = inventory.index;
 			}
 
+			inventory.index = undefined;
 			return inventory.splice(removeIx, 1);
 		};
 
