@@ -8,7 +8,7 @@ module ETR {
 		//noinspection JSUnusedGlobalSymbols
 		static $inject = [ "$scope", "g" ];
 
-		constructor($scope, g: GameState, $window) {
+		constructor($scope, g: GameState) {
 			super($scope, g);
 		}
 
