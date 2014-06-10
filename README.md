@@ -1,8 +1,7 @@
-angularjs-typescript-template
+escape-web
 ========================================
 
-This is a starting point for building [AngularJS](https://angularjs.org/)
-projects in [TypeScript](http://www.typescriptlang.org/).
+No peeking.
 
 Development
 ----------------------------------------
