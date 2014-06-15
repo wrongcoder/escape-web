@@ -27,10 +27,24 @@ module ETR {
 					this.caption = "put-back";
 				}
 			}
+
+			if (clicked === "switch") {
+				if (this.g.flag.lightsOn) {
+					this.caption = "switch-off";
+				} else {
+					this.caption = "switch-on";
+				}
+				this.g.flag.lightsOn = !this.g.flag.lightsOn;
+			}
 		}
 
 		showVase(): boolean {
 			return !this.g.flag.vasePickedUp;
 		}
+
+		getSuffix(): string {
+			return (this.g.flag.lightsOn ? "" : "-dark");
+		}
+
 	}
 }

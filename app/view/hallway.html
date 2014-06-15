@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <div class="container room" data-ng-controller="HallwayRoomController as c" data-ng-click="c.click($event, undefined)">
-	<img class="background" src="static/hallway.png" />
-	<img class="object" src="static/hallway-table.png" style="top: 350px; left: 350px;" data-ng-click="c.click($event, 'table')" />
-	<img class="object" src="static/hallway-vase.png" style="top: 179px; left: 580px;" data-ng-show="c.showVase()" data-ng-click="c.click($event, 'vase')" />
+	<img class="background" src="static/hallway{{c.getSuffix()}}.png" />
+	<img class="object" src="static/hallway-table{{c.getSuffix()}}.png" style="top: 350px; left: 350px;" data-ng-click="c.click($event, 'table')" />
+	<img class="object" src="static/hallway-vase{{c.getSuffix()}}.png" style="top: 179px; left: 580px;" data-ng-show="c.showVase()" data-ng-click="c.click($event, 'vase')" />
+	<img class="object" src="static/hallway-switch{{c.getSuffix()}}.png" style="top: 200px; left: 73px;" data-ng-click="c.click($event, 'switch')" />
 	<div class="caption" style="left: 300px; top: 300px;" data-ng-show="c.caption == 'table'">It's a table.</div>
 	<div class="caption" style="left: 250px; top: 250px;" data-ng-show="c.caption == 'vase'">You pick up the vase.</div>
 	<div class="caption" style="left: 260px; top: 250px;" data-ng-show="c.caption == 'put-back'">You return the vase.</div>
+	<div class="caption" style="left: 145px; top: 277px;" data-ng-show="c.caption == 'switch-off'">You turn off the lights. Ready to go.</div>
+	<div class="caption" style="left: 145px; top: 277px;" data-ng-show="c.caption == 'switch-on'">You turn on the lights.<br/>Did you forget something?</div>
 	<div id="buttonControllerContainer" class="container" data-ng-include="'view/buttons.html'"></div>
 </div>

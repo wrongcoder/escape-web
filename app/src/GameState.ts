@@ -14,6 +14,7 @@ module ETR {
 		/** Game flags */
 		flag = {
 			vasePickedUp: false,
+			lightsOn: true,
 		};
 	}
 }
