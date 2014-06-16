@@ -39,7 +39,9 @@
 	<div id="debugControllerContainer" class="container" data-ng-controller="DebugController as c">
 		<div class="container column">
 			<div>
+				<!--(if target dev)><!-->
 				<button data-ng-click="c.reloadView()">Reload View</button>
+				<!--<!(endif)-->
 				<button data-ng-click="c.toggleBorders()">Borders: {{c.g.displayContainerBorders}}</button>
 			</div>
 			<div>
