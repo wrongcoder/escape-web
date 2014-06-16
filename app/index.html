@@ -28,6 +28,9 @@
 	<link rel="stylesheet" href="style.css" />
 	<!--<!(endif)-->
 	<title>Escape the Room</title>
+	<script>
+		document.ondragstart = function () { return false; };
+	</script>
 </head>
 <body>
 	<div id="rootControllerContainer" class="container" data-ng-controller="RootContainerController as c">
