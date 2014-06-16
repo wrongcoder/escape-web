@@ -26,4 +26,10 @@ module ETR {
 		icon: "hammer.png",
 	});
 
+	item({
+		id: "key",
+		name: "House key",
+		icon: "key.png",
+	});
+
 }

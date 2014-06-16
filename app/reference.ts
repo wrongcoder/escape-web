@@ -7,6 +7,7 @@
 /// <reference path="src/ButtonController.ts" />
 /// <reference path="src/DebugController.ts" />
 /// <reference path="src/ExitRoomControllers.ts" />
+/// <reference path="src/GameOverController.ts" />
 /// <reference path="src/GameState.ts" />
 /// <reference path="src/HallwayRoomController.ts" />
 /// <reference path="src/Inventory.ts" />

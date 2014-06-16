@@ -1,1 +1,11 @@
-<h1>you win</h1>
+<!DOCTYPE html>
+<div class="container" data-ng-controller="GameOverController as c">
+	<div data-ng-show="c.won()">
+		<h1>You win</h1>
+		<p>You have successfully left your house. Congratulations on your monumental victory!</p>
+	</div>
+	<div data-ng-show="!c.won()">
+		<h1>Oops</h1>
+		<p>As you hear your self-locking front door slamming shut behind you, you wonder how you're going to get back in without your house key.</p>
+	</div>
+</div>
