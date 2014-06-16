@@ -34,30 +34,34 @@
 		<div id="rootViewContainer" class="container" data-ng-include="'view/' + c.g.rootView + '.html'" data-ng-class="{borders: c.g.displayContainerBorders}"></div>
 	</div>
 	<div id="debugControllerContainer" class="container" data-ng-controller="DebugController as c">
-		<div>
-			<button data-ng-click="c.reloadView()">Reload View</button>
-			<button data-ng-click="c.toggleBorders()">Borders: {{c.g.displayContainerBorders}}</button>
+		<div class="container column">
+			<div>
+				<button data-ng-click="c.reloadView()">Reload View</button>
+				<button data-ng-click="c.toggleBorders()">Borders: {{c.g.displayContainerBorders}}</button>
+			</div>
+			<div>
+				<label>View: <input type="text" data-ng-model="c.g.rootView" /></label>
+			</div>
+			<div>
+				<form data-ng-submit="c.giveItem()">
+					<label>Item ID: <input type="text" data-ng-model="c.giveItemId" /></label>
+					<input type="submit" value="Give" />
+				</form>
+			</div>
+			<div>
+				<label>Selected item: {{c.g.inventory.get().id}} <button data-ng-click="c.removeSelectedItem()">Remove</button></label>
+			</div>
 		</div>
-		<div>
-			<label>View: <input type="text" data-ng-model="c.g.rootView" /></label>
-		</div>
-		<div>
-			<form data-ng-submit="c.giveItem()">
-				<label>Item ID: <input type="text" data-ng-model="c.giveItemId" /></label>
-				<input type="submit" value="Give" />
-			</form>
-		</div>
-		<div>
-			<label>Selected item: {{c.g.inventory.get().id}} <button data-ng-click="c.removeSelectedItem()">Remove</button></label>
-		</div>
-		<div>
-			<table>
-				<tr data-ng-repeat="(flagName, flagValue) in c.g.flag">
-					<th data-ng-show="!c.isBooleanFlag(flagName)">{{flagName}}</th>
-					<th data-ng-show="c.isBooleanFlag(flagName)"><a href="#" data-ng-click="c.flipBooleanFlag(flagName)">{{flagName}}</a></th>
-					<td>{{flagValue}}</td>
-				</tr>
-			</table>
+		<div class="container column">
+			<div class="gameFlags">
+				<table>
+					<tr data-ng-repeat="(flagName, flagValue) in c.g.flag">
+						<th data-ng-show="!c.isBooleanFlag(flagName)">{{flagName}}</th>
+						<th data-ng-show="c.isBooleanFlag(flagName)"><a href="#" data-ng-click="c.flipBooleanFlag(flagName)">{{flagName}}</a></th>
+						<td>{{flagValue}}</td>
+					</tr>
+				</table>
+			</div>
 		</div>
 	</div>
 </body>

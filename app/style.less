@@ -46,16 +46,34 @@ html, body {
 }
 
 #debugControllerContainer {
-	margin: 2em 0;
+	margin: 2em auto;
 	text-align: center;
 
 	div {
-		margin: 0.3em;
+		margin: 1em;
 	}
 
 	a {
 		color: @foreground-default;
 		text-decoration: none;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+
+	div.column {
+		display: inline-block;
+		vertical-align: text-top;
+	}
+
+	div.gameFlags table {
+		border-collapse: collapse;
+
+		td, th {
+			border: 1px solid @foreground-default;
+			text-align: left;
+			padding: 0.3em 1em;
+		}
 	}
 
 	display: none;
