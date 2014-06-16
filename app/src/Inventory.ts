@@ -33,7 +33,7 @@ module ETR {
 	}
 
 	export function makeInventory(items: Item[]): Inventory {
-		var inventory: any = items;
+		var inventory: any = items.concat();
 
 		inventory.index = <number> undefined;
 
