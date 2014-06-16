@@ -3,6 +3,8 @@
 @foreground-default: #eee;
 @foreground-high-contrast: #fff;
 
+@z-index-caption: 10000;
+
 html, body {
 	color: #fff;
 	background-color: #000;
@@ -111,6 +113,13 @@ html, body {
 			}
 		}
 	}
+
+	.inventoryMessage {
+		top: 75px;
+		left: 95px;
+		position: absolute;
+		z-index: @z-index-caption;
+	}
 }
 
 .container {
@@ -136,6 +145,6 @@ html, body {
 		color: @foreground-high-contrast;
 		border: 1px solid @foreground-default;
 		padding: 0.5em 1.5em;
-		z-index: 10000;
+		z-index: @z-index-caption;
 	}
 }

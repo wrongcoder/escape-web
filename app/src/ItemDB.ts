@@ -4,10 +4,16 @@ module ETR {
 
 	export var ItemDB: { [key: string]: Item } = {};
 
-	export class Item {
+	export interface Item {
 		id: string;
 		name: string;
 		icon: string;
+
+		/** this was selected, then clicked on argument; takes precedence */
+		clickedOnHandler?: (GameState, Item) => boolean;
+
+		/** argument was selected, then clicked on this */
+		clickedByHandler?: (GameStat, Item) => boolean;
 	}
 
 	function item(newItem: Item) {

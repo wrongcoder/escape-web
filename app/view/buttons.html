@@ -6,4 +6,7 @@
 			<img data-ng-if="c.g.inventory[index]" data-ng-click="c.click($event, index)" data-ng-src="static/icon/{{c.g.inventory[index].icon}}" src="#"/>
 		</div>
 	</div>
+	<div class="inventoryMessage caption" data-ng-show="c.showInvalidCombinationMessage()" data-ng-click="c.clickMessage($event)">
+		You can't combine those items!
+	</div>
 </div>
