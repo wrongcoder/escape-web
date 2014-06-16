@@ -25,5 +25,13 @@ module ETR {
 		toggleBorders(): void {
 			this.g.displayContainerBorders = !this.g.displayContainerBorders;
 		}
+
+		isBooleanFlag(flagName: string): boolean {
+			return typeof this.g.flag[flagName] === "boolean";
+		}
+
+		flipBooleanFlag(flagName: string): void {
+			this.g.flag[flagName] = !this.g.flag[flagName];
+		}
 	}
 }
