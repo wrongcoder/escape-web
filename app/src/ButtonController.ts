@@ -37,10 +37,17 @@ module ETR {
 			this.cancelInvalidCombinationMessage();
 
 			if (inventory.index === undefined) {
+				/* No item currently selected */
 				this.g.inventory.index = ix;
 				return;
 			}
 			if (ix === undefined) {
+				/* Clicked on blank area */
+				this.g.inventory.index = undefined;
+				return;
+			}
+			if (ix === inventory.index) {
+				/* Clicked on selected item */
 				this.g.inventory.index = undefined;
 				return;
 			}
