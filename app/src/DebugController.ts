@@ -6,6 +6,8 @@ module ETR {
 		private $templateCache: ng.ITemplateCacheService;
 		private $timeout: ng.ITimeoutService;
 
+		giveItemId: string = '';
+
 		//noinspection JSUnusedGlobalSymbols
 		static $inject = [ "g", "$templateCache", "$timeout" ];
 
@@ -32,6 +34,18 @@ module ETR {
 
 		flipBooleanFlag(flagName: string): void {
 			this.g.flag[flagName] = !this.g.flag[flagName];
+		}
+
+		giveItem(): void {
+			var item = ItemDB[this.giveItemId];
+			if (item !== undefined) {
+				this.g.inventory.add(item);
+			}
+			this.giveItemId = '';
+		}
+
+		removeSelectedItem(): void {
+			this.g.inventory.remove();
 		}
 	}
 }

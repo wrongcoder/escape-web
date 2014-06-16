@@ -42,6 +42,15 @@
 			<label>View: <input type="text" data-ng-model="c.g.rootView" /></label>
 		</div>
 		<div>
+			<form data-ng-submit="c.giveItem()">
+				<label>Item ID: <input type="text" data-ng-model="c.giveItemId" /></label>
+				<input type="submit" value="Give" />
+			</form>
+		</div>
+		<div>
+			<label>Selected item: {{c.g.inventory.get().id}} <button data-ng-click="c.removeSelectedItem()">Remove</button></label>
+		</div>
+		<div>
 			<table>
 				<tr data-ng-repeat="(flagName, flagValue) in c.g.flag">
 					<th data-ng-show="!c.isBooleanFlag(flagName)">{{flagName}}</th>
