@@ -30,6 +30,17 @@ module ETR {
 		id: "hammer",
 		name: "Hammer",
 		icon: "hammer.png",
+		clickedOnHandler: (g, item) => {
+			var hammer = ItemDB["hammer"];
+			var vase = ItemDB["vase"];
+			if (item === vase) {
+				g.inventory.removeItem(hammer);
+				g.inventory.removeItem(vase);
+				g.inventory.add(ItemDB["key"]);
+				return true;
+			}
+			return false;
+		}
 	});
 
 	item({
