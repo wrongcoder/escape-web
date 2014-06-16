@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<div class="container room" data-ng-controller="ExitLightRoomController as c" data-ng-click="c.click($event, undefined)">
+	<img class="background" src="static/walls.png" />
+	<img class="object" data-ng-show="!c.g.flag.doorOpen" src="static/exit-doorway.png" style="left: 182px; top: 119px;" data-ng-click="c.click($event, 'closedDoor')" />
+	<img class="object" data-ng-show="c.g.flag.doorOpen" src="static/exit-doorway-open.png" style="left: 182px; top: 119px;" data-ng-click="c.click($event, 'openDoor')" />
+	<div class="object" style="left: 0; top: 0; height: 600px; width: 40px;" data-ng-click="c.click($event, 'hallway')"></div>
+	<div class="caption" style="left: 400px; top: 260px;" data-ng-show="c.caption === 'lights'">Be Power Smart!</div>
+	<div class="caption" style="left: 400px; top: 260px;" data-ng-show="c.caption === 'openedDoor'">You open the door.</div>
+	<div id="buttonControllerContainer" class="container" data-ng-include="'view/buttons.html'"></div>
+</div>

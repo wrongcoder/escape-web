@@ -15,6 +15,7 @@ module ETR {
 		flag = {
 			vasePickedUp: false,
 			lightsOn: true,
+			doorOpen: false,
 		};
 	}
 }

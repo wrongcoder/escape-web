@@ -36,6 +36,14 @@ module ETR {
 				}
 				this.g.flag.lightsOn = !this.g.flag.lightsOn;
 			}
+
+			if (clicked === "exit") {
+				if (this.g.flag.lightsOn) {
+					this.g.rootView = "exit-light";
+				} else {
+					this.g.rootView = "exit-dark";
+				}
+			}
 		}
 
 		showVase(): boolean {

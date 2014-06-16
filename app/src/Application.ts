@@ -8,4 +8,6 @@ module ETR {
 	Application.controller("SplashScreenController", SplashScreenController);
 	Application.controller("ButtonController", ButtonController);
 	Application.controller("HallwayRoomController", HallwayRoomController);
+	Application.controller("ExitDarkRoomController", ExitDarkRoomController);
+	Application.controller("ExitLightRoomController", ExitLightRoomController);
 }
