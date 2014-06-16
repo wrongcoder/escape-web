@@ -31,14 +31,10 @@ module ETR {
 		}
 
 		click($event: Event, ix: number): void {
-			$event.stopPropagation();
-
-			if (this.cancelInvalidCombinationMessagePromise !== undefined) {
-				this.$timeout.cancel(this.cancelInvalidCombinationMessagePromise);
-				this.cancelInvalidCombinationMessagePromise = undefined;
-			}
-
 			var inventory = this.g.inventory;
+
+			$event.stopPropagation();
+			this.cancelInvalidCombinationMessage();
 
 			if (inventory.index === undefined) {
 				this.g.inventory.index = ix;
@@ -71,8 +67,16 @@ module ETR {
 			}
 		}
 
+		cancelInvalidCombinationMessage() {
+			if (this.cancelInvalidCombinationMessagePromise !== undefined) {
+				this.$timeout.cancel(this.cancelInvalidCombinationMessagePromise);
+				this.cancelInvalidCombinationMessagePromise = undefined;
+			}
+		}
+
 		clickMessage($event: Event): void {
 			$event.stopPropagation();
+			this.cancelInvalidCombinationMessage();
 		}
 	}
 
