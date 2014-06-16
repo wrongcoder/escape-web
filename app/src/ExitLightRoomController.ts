@@ -25,6 +25,11 @@ module ETR {
 				case "hallway":
 					this.g.rootView = "hallway";
 					break;
+				case "hammer":
+					this.caption = "hammer";
+					this.g.inventory.add(ItemDB["hammer"]);
+					this.g.flag.hammerPickedUp = true;
+					break;
 				default:
 					this.caption = undefined;
 					break;

@@ -3,7 +3,9 @@
 	<img class="background" src="static/walls-dark.png" />
 	<img class="object" data-ng-show="!c.g.flag.doorOpen" src="static/exit-doorway-dark.png" style="left: 182px; top: 119px;" data-ng-click="c.click($event, 'closedDoor')" />
 	<img class="object" data-ng-show="c.g.flag.doorOpen" src="static/exit-doorway-open-dark.png" style="left: 182px; top: 119px;" data-ng-click="c.click($event, 'openDoor')" />
+	<img class="object" data-ng-show="!c.g.flag.hammerPickedUp" src="static/exit-hammer-dark.png" style="left: 496px; top: 457px;" data-ng-click="c.click($event, 'hammer')" />
 	<div class="object" style="left: 0; top: 0; height: 600px; width: 40px;" data-ng-click="c.click($event, 'hallway')"></div>
 	<div class="caption" style="left: 400px; top: 260px;" data-ng-show="c.caption === 'openedDoor'">You open the door.</div>
+	<div class="caption" style="left: 430px; top: 430px;" data-ng-show="c.caption === 'hammer'">You pick up the hammer.</div>
 	<div id="buttonControllerContainer" class="container" data-ng-include="'view/buttons.html'"></div>
 </div>

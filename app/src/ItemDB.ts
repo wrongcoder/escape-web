@@ -20,4 +20,10 @@ module ETR {
 		icon: "vase.png",
 	});
 
+	item({
+		id: "hammer",
+		name: "Hammer",
+		icon: "hammer.png",
+	});
+
 }
