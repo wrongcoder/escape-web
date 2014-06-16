@@ -65,7 +65,11 @@ module ETR {
 
 			switch (clicked) {
 				case "openDoor":
-					this.g.rootView = "game-over";
+					if (this.g.inventory.has(ItemDB["vase"])) {
+						this.caption = "vase";
+					} else {
+						this.g.rootView = "game-over";
+					}
 					break;
 				default:
 					super.click($event, clicked);
