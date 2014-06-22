@@ -2,27 +2,27 @@
 
 module Application {
 
-	export interface HelloWorldControllerScope {
-		c: HelloWorldController;
-	}
-
 	export class HelloWorldController {
-		private number: number;
+		g: GlobalState;
 
 		//noinspection JSUnusedGlobalSymbols
-		static $inject = [ "$scope" ];
+		static $inject = [ "g", "$scope" ];
 
-		constructor($scope: HelloWorldControllerScope) {
-			this.number = 3;
+		constructor(g: GlobalState, $scope) {
+			this.g = g;
 			$scope.c = this;
 		}
 
 		increment(): void {
-			this.number += 1;
+			this.g.number += 1;
 		}
 
 		decrement(): void {
-			this.number -= 1;
+			this.g.number -= 1;
+		}
+
+		getNumber(): number {
+			return this.g.number;
 		}
 	}
 
