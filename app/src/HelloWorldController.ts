@@ -6,11 +6,10 @@ module Application {
 		g: GlobalState;
 
 		//noinspection JSUnusedGlobalSymbols
-		static $inject = [ "g", "$scope" ];
+		static $inject = [ "g" ];
 
-		constructor(g: GlobalState, $scope) {
+		constructor(g: GlobalState) {
 			this.g = g;
-			$scope.c = this;
 		}
 
 		increment(): void {

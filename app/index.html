@@ -15,10 +15,10 @@
 	<!--<!(endif)-->
 </head>
 <body>
-	<div data-ng-controller="HelloWorldController">
-		<p>The number is {{c.getNumber()}}.</p>
-		<button data-ng-click="c.decrement()">-</button>
-		<button data-ng-click="c.increment()">+</button>
+	<div data-ng-controller="HelloWorldController as hello">
+		<p>The number is {{hello.getNumber()}}.</p>
+		<button data-ng-click="hello.decrement()">-</button>
+		<button data-ng-click="hello.increment()">+</button>
 	</div>
 </body>
 </html>
