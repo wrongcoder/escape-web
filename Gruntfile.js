@@ -1,6 +1,7 @@
 module.exports = function (grunt) {
 	"use strict";
 
+	grunt.loadNpmTasks("grunt-angular-templates");
 	grunt.loadNpmTasks("grunt-contrib-clean");
 	grunt.loadNpmTasks("grunt-contrib-connect");
 	grunt.loadNpmTasks("grunt-contrib-copy");
@@ -10,7 +11,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks("grunt-ts");
 
 	grunt.registerTask("dev", [ "connect:dev", "ts:dev" ]);
-	grunt.registerTask("dist", [ "clean", "ts:prod", "uglify:prod", "less:prod", "targethtml:prod", "copy:dist" ]);
+	grunt.registerTask("dist", [ "clean", "ts:prod", "ngtemplates", "uglify:prod", "less:prod", "targethtml:prod", "copy:dist" ]);
 	grunt.registerTask("test", [ "dist", "connect:dist:keepalive" ]);
 	grunt.registerTask("default", [ "dev" ]);
 
@@ -36,9 +37,22 @@ module.exports = function (grunt) {
 				},
 			},
 		},
+		ngtemplates: {
+			Application: {
+				cwd: "app",
+				src: [ "view/**.html" ],
+				dest: "target/views.js",
+				options: {
+					htmlmin: {
+						collapseWhitespace: true,
+						collapseBooleanAttributes: true,
+					},
+				},
+			},
+		},
 		uglify: {
 			prod: {
-				src: [ "target/code.js" ],
+				src: [ "target/code.js", "target/views.js" ],
 				dest: "target/application.js",
 			},
 		},
