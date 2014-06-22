@@ -17,11 +17,11 @@ module Application {
 			$scope.c = this;
 		}
 
-		increment() {
+		increment(): void {
 			this.number += 1;
 		}
 
-		decrement() {
+		decrement(): void {
 			this.number -= 1;
 		}
 	}
