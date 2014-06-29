@@ -26,6 +26,9 @@ module.exports = function (grunt) {
 				reference: "app/reference.ts",
 				outDir: "target",
 				watch: "app/src",
+				options: {
+					sourceRoot: ".",
+				},
 			},
 			prod: {
 				baseDir: "app/src",
@@ -90,7 +93,7 @@ module.exports = function (grunt) {
 			},
 			dev: {
 				options: {
-					base: [ "app", "target", "" ],
+					base: [ "app", "target" ],
 				},
 			},
 			dist: {
