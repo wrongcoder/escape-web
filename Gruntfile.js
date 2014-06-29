@@ -24,6 +24,7 @@ module.exports = function (grunt) {
 				baseDir: "app",
 				src: [ "app/src/**/*.ts" ],
 				reference: "app/reference.ts",
+				amdloader: "target/loader.js",
 				outDir: "target",
 				watch: "app/src",
 				options: {
@@ -93,7 +94,7 @@ module.exports = function (grunt) {
 			},
 			dev: {
 				options: {
-					base: [ "app", "target" ],
+					base: [ "app", "target", "target/src" ],
 				},
 			},
 			dist: {
