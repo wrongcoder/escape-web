@@ -11,4 +11,5 @@ module ETR {
 	Application.controller("HallwayRoomController", HallwayRoomController);
 	Application.controller("ExitDarkRoomController", ExitDarkRoomController);
 	Application.controller("ExitLightRoomController", ExitLightRoomController);
+	angular.element(document).ready(() => angular.bootstrap(document, ["ETR"]));
 }

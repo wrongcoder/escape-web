@@ -1,31 +1,21 @@
 <!DOCTYPE html>
 <!--(if target dev)><!-->
-<html data-ng-app="ETR" class="ETR dev">
+<html class="ETR dev">
 <!--<!(endif)-->
 <!--(if target prod)>
-<html data-ng-app="ETR">
+<html>
 <!--<!(endif)-->
 <head>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js"></script>
+	<script defer="defer" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js"></script>
 	<!--(if target dev)><!-->
-	<script src="src/AbstractRoomController.js"></script>
-	<script src="src/ButtonController.js"></script>
-	<script src="src/DebugController.js"></script>
-	<script src="src/GameOverController.js"></script>
-	<script src="src/ExitRoomControllers.js"></script>
-	<script src="src/GameState.js"></script>
-	<script src="src/HallwayRoomController.js"></script>
-	<script src="src/Inventory.js"></script>
-	<script src="src/ItemDB.js"></script>
-	<script src="src/RootContainerController.js"></script>
-	<script src="src/SplashController.js"></script>
-	<script src="src/Application.js"></script>
 	<link rel="stylesheet/less" href="style.less" />
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.0/less.min.js"></script>
+	<script defer="defer" src="https://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.0/less.min.js"></script>
+	<script defer="defer" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.14/require.min.js" data-main="loader.js"></script>
 	<!--<!(endif)-->
 	<!--(if target prod)>
-	<script src="application.js"></script>
-	<link rel="stylesheet" href="style.css" />
+	<script defer="defer" src="application.js"></script>
+	<script>document.write("<style>[data-ng-cloak] { display: none; }</style>");</script>
+	<style>@import url("style.css");</style>
 	<!--<!(endif)-->
 	<title>Escape the Room</title>
 	<script>
@@ -33,7 +23,7 @@
 	</script>
 </head>
 <body>
-	<div id="rootControllerContainer" class="container" data-ng-controller="RootContainerController as c">
+	<div id="rootControllerContainer" class="container" data-ng-controller="RootContainerController as c" data-ng-cloak="cloak">
 		<div id="rootViewContainer" class="container" data-ng-include="'view/' + c.g.rootView + '.html'" data-ng-class="{borders: c.g.displayContainerBorders}"></div>
 	</div>
 	<div id="debugControllerContainer" class="container" data-ng-controller="DebugController as c">
